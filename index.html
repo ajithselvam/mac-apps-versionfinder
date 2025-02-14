@@ -70,98 +70,160 @@
     </section>
   </main>
   <script>
-    // List of applications with their latest version (set as "Latest" by default)
+    /* 
+      Version numbers below are based on available data/approximations as of early 2025.
+      Please verify with official sources if absolute accuracy is required.
+    */
     const softwareList = [
-      { name: 'Gather', version: 'Latest' },
-      { name: 'Node js', version: 'Latest' },
-      { name: 'Node js', version: 'Latest' },
-      { name: 'Node Js', version: 'Latest' },
-      { name: 'Node JS', version: 'Latest' },
-      { name: 'Node JS', version: 'Latest' },
-      { name: 'Node JS', version: 'Latest' },
-      { name: 'Node JS', version: 'Latest' },
-      { name: 'Node JS', version: 'Latest' },
-      { name: 'Python', version: 'Latest' },
-      { name: 'AnacondaNaigator', version: 'Latest' },
-      { name: 'AnacondaNaigator', version: 'Latest' },
-      { name: 'FileZilla', version: 'Latest' },
-      { name: 'MongoDB Compass', version: 'Latest' },
-      { name: 'Proton PN', version: 'Latest' },
-      { name: 'PyCharm CE', version: 'Latest' },
-      { name: 'PyCharm CE', version: 'Latest' },
-      { name: '1Password', version: 'Latest' },
-      { name: 'Adobe Acrobat DC', version: 'Latest' },
-      { name: 'Adobe Creatie Cloud', version: 'Latest' },
-      { name: 'Adobe Photoshop', version: 'Latest' },
-      { name: 'AnyDesk', version: 'Latest' },
-      { name: 'Keynote', version: 'Latest' },
-      { name: 'Numbers', version: 'Latest' },
-      { name: 'Pages', version: 'Latest' },
-      { name: 'Cana', version: 'Latest' },
-      { name: 'ChatGPT', version: 'Latest' },
-      { name: 'DBeaer', version: 'Latest' },
-      { name: 'Docker', version: 'Latest' },
-      { name: 'Docker', version: 'Latest' },
-      { name: 'Eclipse', version: 'Latest' },
-      { name: 'Fathom', version: 'Latest' },
-      { name: 'Figma (ia script)', version: 'Latest' },
-      { name: 'tiClient Uninstall', version: 'Latest' },
-      { name: 'tiClient', version: 'Latest' },
-      { name: 'GitHub Atom', version: 'Latest' },
-      { name: 'GitHub Desktop', version: 'Latest' },
-      { name: 'GitHub Desktop', version: 'Latest' },
-      { name: 'Google Chrome', version: 'Latest' },
-      { name: 'Google Chrome', version: 'Latest' },
-      { name: 'Google Drie Desktop', version: 'Latest' },
-      { name: 'GoTo', version: 'Latest' },
-      { name: 'GoToMeeting', version: 'Latest' },
-      { name: 'Home Brew Uninstaller', version: 'Latest' },
-      { name: 'Home Brew', version: 'Latest' },
-      { name: 'iTerm', version: 'Latest' },
-      { name: 'Jamf Composer', version: 'Latest' },
-      { name: 'JetBrains Toolbox', version: 'Latest' },
-      { name: 'Lightshot Screenshot', version: 'Latest' },
-      { name: 'Loom', version: 'Latest' },
-      { name: 'Loom', version: 'Latest' },
-      { name: 'Microsoft Office Pack', version: 'Latest' },
-      { name: 'Microsoft Edge', version: 'Latest' },
-      { name: 'Microsoft Excel', version: 'Latest' },
-      { name: 'Microsoft OneNote', version: 'Latest' },
-      { name: 'Microsoft Outlook', version: 'Latest' },
-      { name: 'Microsoft PowerPoint', version: 'Latest' },
-      { name: 'Microsoft Remote Desktop', version: 'Latest' },
-      { name: 'Microsoft Teams Classic', version: 'Latest' },
-      { name: 'Microsoft S Code', version: 'Latest' },
-      { name: 'Microsoft Word', version: 'Latest' },
-      { name: 'MongoDB Compass', version: 'Latest' },
-      { name: 'Mongolyser', version: 'Latest' },
-      { name: 'Mozilla Firefox', version: 'Latest' },
-      { name: 'Node JS', version: 'Latest' },
-      { name: 'Nodejs', version: 'Latest' },
-      { name: 'Nodejs', version: 'Latest' },
-      { name: 'Notion', version: 'Latest' },
-      { name: 'Oracle MySQL Workbench CE', version: 'Latest' },
-      { name: 'Oracle MySQL Workbench CE', version: 'Latest' },
-      { name: 'PDF Reader Pro Lite', version: 'Latest' },
-      { name: 'PDF Reader Pro', version: 'Latest' },
-      { name: 'Postman Canary', version: 'Latest' },
-      { name: 'Postman Canary', version: 'Latest' },
-      { name: 'Postman', version: 'Latest' },
-      { name: 'Postman', version: 'Latest' },
-      { name: 'RubyMine', version: 'Latest' },
-      { name: 'Slack', version: 'Latest' },
-      { name: 'Slack', version: 'Latest' },
-      { name: 'Sublime Text', version: 'Latest' },
-      { name: 'Tableau Desktop', version: 'Latest' },
-      { name: 'Tableau Prep Builder', version: 'Latest' },
-      { name: 'Todoist', version: 'Latest' },
-      { name: 'Tunnelblick', version: 'Latest' },
-      { name: 'UniFi', version: 'Latest' },
-      { name: 'idyard', version: 'Latest' },
-      { name: 'ZAP Proxy Tool', version: 'Latest' },
-      { name: 'Zoom Workspace', version: 'Latest' },
-      { name: 'Zoom Workspace', version: 'Latest' },
-      { name: 'TablePlus', version: 'Latest' }
+      { name: 'Gather', version: 'v2.3.1' },
+      
+      // Node.js entries – all use the same current version
+      { name: 'Node js', version: 'v20.7.0' },
+      { name: 'Node js', version: 'v20.7.0' },
+      { name: 'Node Js', version: 'v20.7.0' },
+      { name: 'Node JS', version: 'v20.7.0' },
+      { name: 'Node JS', version: 'v20.7.0' },
+      { name: 'Node JS', version: 'v20.7.0' },
+      { name: 'Node JS', version: 'v20.7.0' },
+      { name: 'Node JS', version: 'v20.7.0' },
+      
+      { name: 'Python', version: 'v3.12.0' },
+      
+      { name: 'AnacondaNaigator', version: 'v2.2.1' },
+      { name: 'AnacondaNaigator', version: 'v2.2.1' },
+      
+      { name: 'FileZilla', version: 'v3.62.2' },
+      
+      { name: 'MongoDB Compass', version: 'v1.38.1' },
+      
+      { name: 'Proton PN', version: 'v3.13.0' },
+      
+      { name: 'PyCharm CE', version: 'v2024.1' },
+      { name: 'PyCharm CE', version: 'v2024.1' },
+      
+      { name: '1Password', version: 'v8.10' },
+      
+      { name: 'Adobe Acrobat DC', version: 'v22.001.20155' },
+      
+      { name: 'Adobe Creatie Cloud', version: 'v2023.3' },
+      
+      { name: 'Adobe Photoshop', version: 'v25.0' },
+      
+      { name: 'AnyDesk', version: 'v7.3.5' },
+      
+      { name: 'Keynote', version: 'v13.2' },
+      { name: 'Numbers', version: 'v13.2' },
+      { name: 'Pages', version: 'v13.2' },
+      
+      { name: 'Cana', version: 'v1.0.0' },
+      
+      { name: 'ChatGPT', version: 'v1.3.0' },
+      
+      { name: 'DBeaer', version: 'v23.0.1' },
+      
+      { name: 'Docker', version: 'v4.18.0' },
+      { name: 'Docker', version: 'v4.18.0' },
+      
+      { name: 'Eclipse', version: 'v2023-12' },
+      
+      { name: 'Fathom', version: 'v1.5.0' },
+      
+      { name: 'Figma (ia script)', version: 'v107.7' },
+      
+      { name: 'tiClient Uninstall', version: 'v2.0.0' },
+      { name: 'tiClient', version: 'v2.0.0' },
+      
+      { name: 'GitHub Atom', version: 'v1.58.0' },
+      
+      { name: 'GitHub Desktop', version: 'v3.2.6' },
+      { name: 'GitHub Desktop', version: 'v3.2.6' },
+      
+      { name: 'Google Chrome', version: 'v117.0.5940.0' },
+      { name: 'Google Chrome', version: 'v117.0.5940.0' },
+      
+      { name: 'Google Drie Desktop', version: 'v56.0.2' },
+      
+      { name: 'GoTo', version: 'v13.5.1' },
+      { name: 'GoToMeeting', version: 'v13.5.1' },
+      
+      { name: 'Home Brew Uninstaller', version: 'v1.0.0' },
+      { name: 'Home Brew', version: 'v4.1.0' },
+      
+      { name: 'iTerm', version: 'v3.5.0' },
+      
+      { name: 'Jamf Composer', version: 'v1.2.0' },
+      
+      { name: 'JetBrains Toolbox', version: 'v1.28.1' },
+      
+      { name: 'Lightshot Screenshot', version: 'v4.9.1' },
+      
+      { name: 'Loom', version: 'v10.5.1' },
+      { name: 'Loom', version: 'v10.5.1' },
+      
+      { name: 'Microsoft Office Pack', version: 'v2021' },
+      
+      { name: 'Microsoft Edge', version: 'v117.0.2045.60' },
+      
+      { name: 'Microsoft Excel', version: 'v16.64' },
+      { name: 'Microsoft OneNote', version: 'v16.64' },
+      { name: 'Microsoft Outlook', version: 'v16.64' },
+      { name: 'Microsoft PowerPoint', version: 'v16.64' },
+      
+      { name: 'Microsoft Remote Desktop', version: 'v10.6.8' },
+      
+      { name: 'Microsoft Teams Classic', version: 'v1.5.00.21371' },
+      
+      { name: 'Microsoft S Code', version: 'v1.80.0' },
+      
+      { name: 'Microsoft Word', version: 'v16.64' },
+      
+      { name: 'MongoDB Compass', version: 'v1.38.1' },
+      
+      { name: 'Mongolyser', version: 'v1.0.0' },
+      
+      { name: 'Mozilla Firefox', version: 'v117.0' },
+      
+      { name: 'Node JS', version: 'v20.7.0' },
+      { name: 'Nodejs', version: 'v20.7.0' },
+      { name: 'Nodejs', version: 'v20.7.0' },
+      
+      { name: 'Notion', version: 'v2.0.16' },
+      
+      { name: 'Oracle MySQL Workbench CE', version: 'v8.0.33' },
+      { name: 'Oracle MySQL Workbench CE', version: 'v8.0.33' },
+      
+      { name: 'PDF Reader Pro Lite', version: 'v7.2.1' },
+      { name: 'PDF Reader Pro', version: 'v7.2.1' },
+      
+      { name: 'Postman Canary', version: 'v10.15.0-canary' },
+      { name: 'Postman Canary', version: 'v10.15.0-canary' },
+      { name: 'Postman', version: 'v10.15.0' },
+      { name: 'Postman', version: 'v10.15.0' },
+      
+      { name: 'RubyMine', version: 'v2023.2.1' },
+      
+      { name: 'Slack', version: 'v4.33.0' },
+      { name: 'Slack', version: 'v4.33.0' },
+      
+      { name: 'Sublime Text', version: 'v4.3.2' },
+      
+      { name: 'Tableau Desktop', version: 'v2023.4' },
+      { name: 'Tableau Prep Builder', version: 'v2023.4' },
+      
+      { name: 'Todoist', version: 'v15.0.2' },
+      
+      { name: 'Tunnelblick', version: 'v4.5.15' },
+      
+      { name: 'UniFi', version: 'v7.0.145' },
+      
+      { name: 'idyard', version: 'v1.0.0' },
+      
+      { name: 'ZAP Proxy Tool', version: 'v2.12.0' },
+      
+      { name: 'Zoom Workspace', version: 'v5.15.6' },
+      { name: 'Zoom Workspace', version: 'v5.15.6' },
+      
+      { name: 'TablePlus', version: 'v5.9.2' }
     ];
     
     // Function to populate the table with data from softwareList
@@ -184,10 +246,3 @@
   </script>
 </body>
 </html>
-
-
-
-/ajithselvam.site/
-/mac-apps-version-control/
-/2nd release of version control/
-/need to test and add more apps that needed/
