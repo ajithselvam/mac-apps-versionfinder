@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mac Software Dashboard</title>
+  <style>
+    /* Reset basic styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Body and container styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    /* Dashboard styling */
+    .dashboard {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Table styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    thead {
+      background-color: #007BFF;
+      color: #fff;
+    }
+    
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mac Software Dashboard</h1>
+  </header>
+  <main>
+    <section class="dashboard">
+      <table id="softwareTable">
+        <thead>
+          <tr>
+            <th>Software Name</th>
+            <th>Latest Version</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table rows will be populated by JavaScript -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script>
+    // Sample data representing Mac OS software and their latest versions
+    const softwareList = [
+      { name: 'Xcode', version: '14.3' },
+      { name: 'Safari', version: '16.1' },
+      { name: 'iTerm2', version: '3.4.8' },
+      { name: 'Homebrew', version: '4.0.6' },
+      { name: 'Slack', version: '4.31.155' }
+      // Add more software entries as needed
+    ];
+
+    // Function to populate the table with software data
+    function populateTable() {
+      const tableBody = document.querySelector('#softwareTable tbody');
+
+      softwareList.forEach((software) => {
+        const row = document.createElement('tr');
+
+        const nameCell = document.createElement('td');
+        nameCell.textContent = software.name;
+        row.appendChild(nameCell);
+
+        const versionCell = document.createElement('td');
+        versionCell.textContent = software.version;
+        row.appendChild(versionCell);
+
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Populate the table once the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', populateTable);
+  </script>
+</body>
+</html>
