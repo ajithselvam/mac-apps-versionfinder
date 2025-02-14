@@ -61,23 +61,23 @@
           <tr>
             <th>Software Name</th>
             <th>Latest Version</th>
+            <th>Installed Version</th>
           </tr>
         </thead>
         <tbody>
-          <!-- Rows will be populated by JavaScript -->
+          <!-- Table rows will be populated by JavaScript -->
         </tbody>
       </table>
     </section>
   </main>
   <script>
     /* 
-      Version numbers below are based on available data/approximations as of early 2025.
-      Please verify with official sources if absolute accuracy is required.
+      Latest version numbers (approximated as of early 2025) and simulated installed version data.
+      In a real-world application, fetching installed application versions would require system-level access.
     */
     const softwareList = [
       { name: 'Gather', version: 'v2.3.1' },
       
-      // Node.js entries – all use the same current version
       { name: 'Node js', version: 'v20.7.0' },
       { name: 'Node js', version: 'v20.7.0' },
       { name: 'Node Js', version: 'v20.7.0' },
@@ -226,22 +226,110 @@
       { name: 'TablePlus', version: 'v5.9.2' }
     ];
     
-    // Function to populate the table with data from softwareList
+    // Simulated function to fetch the installed version from the system.
+    // In an actual application, this might call a native API or backend service.
+    function getInstalledVersion(softwareName) {
+      const installedData = {
+        'Gather': 'v2.3.0',
+        'Node js': 'v20.6.0',
+        'Node Js': 'v20.6.0',
+        'Node JS': 'v20.6.0',
+        'Python': 'v3.11.4',
+        'AnacondaNaigator': 'v2.2.0',
+        'FileZilla': 'v3.62.1',
+        'MongoDB Compass': 'v1.38.0',
+        'Proton PN': 'v3.12.9',
+        'PyCharm CE': 'v2023.3',
+        '1Password': 'v8.9',
+        'Adobe Acrobat DC': 'v22.001.20150',
+        'Adobe Creatie Cloud': 'v2023.2',
+        'Adobe Photoshop': 'v25.0',
+        'AnyDesk': 'v7.3.4',
+        'Keynote': 'v13.1',
+        'Numbers': 'v13.1',
+        'Pages': 'v13.1',
+        'Cana': 'v1.0.0',
+        'ChatGPT': 'v1.2.9',
+        'DBeaer': 'v23.0.0',
+        'Docker': 'v4.17.0',
+        'Eclipse': 'v2023-12',
+        'Fathom': 'v1.5.0',
+        'Figma (ia script)': 'v107.6',
+        'tiClient Uninstall': 'v2.0.0',
+        'tiClient': 'v2.0.0',
+        'GitHub Atom': 'v1.57.0',
+        'GitHub Desktop': 'v3.2.5',
+        'Google Chrome': 'v117.0.5939.100',
+        'Google Drie Desktop': 'v56.0.1',
+        'GoTo': 'v13.5.0',
+        'GoToMeeting': 'v13.5.0',
+        'Home Brew Uninstaller': 'v1.0.0',
+        'Home Brew': 'v4.1.0',
+        'iTerm': 'v3.5.0',
+        'Jamf Composer': 'v1.2.0',
+        'JetBrains Toolbox': 'v1.28.0',
+        'Lightshot Screenshot': 'v4.9.0',
+        'Loom': 'v10.5.0',
+        'Microsoft Office Pack': 'v2021',
+        'Microsoft Edge': 'v117.0.2045.50',
+        'Microsoft Excel': 'v16.64',
+        'Microsoft OneNote': 'v16.64',
+        'Microsoft Outlook': 'v16.64',
+        'Microsoft PowerPoint': 'v16.64',
+        'Microsoft Remote Desktop': 'v10.6.8',
+        'Microsoft Teams Classic': 'v1.5.00.21360',
+        'Microsoft S Code': 'v1.80.0',
+        'Microsoft Word': 'v16.64',
+        'Mongolyser': 'v1.0.0',
+        'Mozilla Firefox': 'v117.0',
+        'Notion': 'v2.0.15',
+        'Oracle MySQL Workbench CE': 'v8.0.32',
+        'PDF Reader Pro Lite': 'v7.2.0',
+        'PDF Reader Pro': 'v7.2.0',
+        'Postman Canary': 'v10.15.0-canary',
+        'Postman': 'v10.15.0',
+        'RubyMine': 'v2023.2.0',
+        'Slack': 'v4.33.0',
+        'Sublime Text': 'v4.3.1',
+        'Tableau Desktop': 'v2023.3',
+        'Tableau Prep Builder': 'v2023.3',
+        'Todoist': 'v15.0.1',
+        'Tunnelblick': 'v4.5.14',
+        'UniFi': 'v7.0.144',
+        'idyard': 'v1.0.0',
+        'ZAP Proxy Tool': 'v2.11.0',
+        'Zoom Workspace': 'v5.15.5',
+        'TablePlus': 'v5.9.1'
+      };
+      return installedData[softwareName] || 'Not Installed';
+    }
+    
+    // Populate the table with software data and simulate fetching the installed version.
     function populateTable() {
       const tableBody = document.querySelector('#softwareTable tbody');
       softwareList.forEach(software => {
         const row = document.createElement('tr');
+        
+        // Software Name cell
         const nameCell = document.createElement('td');
         nameCell.textContent = software.name;
         row.appendChild(nameCell);
-        const versionCell = document.createElement('td');
-        versionCell.textContent = software.version;
-        row.appendChild(versionCell);
+        
+        // Latest Version cell
+        const latestCell = document.createElement('td');
+        latestCell.textContent = software.version;
+        row.appendChild(latestCell);
+        
+        // Installed Version cell (using our simulated function)
+        const installedCell = document.createElement('td');
+        installedCell.textContent = getInstalledVersion(software.name);
+        row.appendChild(installedCell);
+        
         tableBody.appendChild(row);
       });
     }
     
-    // Populate the table once the DOM is fully loaded
+    // Populate the table once the DOM is fully loaded.
     document.addEventListener('DOMContentLoaded', populateTable);
   </script>
 </body>
