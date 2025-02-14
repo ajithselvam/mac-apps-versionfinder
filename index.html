@@ -12,7 +12,7 @@
       box-sizing: border-box;
     }
     
-    /* Body and container styling */
+    /* Overall body styling */
     body {
       font-family: Arial, sans-serif;
       background-color: #f5f5f5;
@@ -24,7 +24,7 @@
       margin-bottom: 20px;
     }
     
-    /* Dashboard styling */
+    /* Dashboard container */
     .dashboard {
       background-color: #fff;
       padding: 20px;
@@ -64,43 +64,130 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Table rows will be populated by JavaScript -->
+          <!-- Rows will be populated by JavaScript -->
         </tbody>
       </table>
     </section>
   </main>
   <script>
-    // Sample data representing Mac OS software and their latest versions
+    // List of applications with their latest version (set as "Latest" by default)
     const softwareList = [
-      { name: 'Xcode', version: '14.3' },
-      { name: 'Safari', version: '16.1' },
-      { name: 'iTerm2', version: '3.4.8' },
-      { name: 'Homebrew', version: '4.0.6' },
-      { name: 'Slack', version: '4.31.155' }
-      // Add more software entries as needed
+      { name: 'Gather', version: 'Latest' },
+      { name: 'Node js', version: 'Latest' },
+      { name: 'Node js', version: 'Latest' },
+      { name: 'Node Js', version: 'Latest' },
+      { name: 'Node JS', version: 'Latest' },
+      { name: 'Node JS', version: 'Latest' },
+      { name: 'Node JS', version: 'Latest' },
+      { name: 'Node JS', version: 'Latest' },
+      { name: 'Node JS', version: 'Latest' },
+      { name: 'Python', version: 'Latest' },
+      { name: 'AnacondaNaigator', version: 'Latest' },
+      { name: 'AnacondaNaigator', version: 'Latest' },
+      { name: 'FileZilla', version: 'Latest' },
+      { name: 'MongoDB Compass', version: 'Latest' },
+      { name: 'Proton PN', version: 'Latest' },
+      { name: 'PyCharm CE', version: 'Latest' },
+      { name: 'PyCharm CE', version: 'Latest' },
+      { name: '1Password', version: 'Latest' },
+      { name: 'Adobe Acrobat DC', version: 'Latest' },
+      { name: 'Adobe Creatie Cloud', version: 'Latest' },
+      { name: 'Adobe Photoshop', version: 'Latest' },
+      { name: 'AnyDesk', version: 'Latest' },
+      { name: 'Keynote', version: 'Latest' },
+      { name: 'Numbers', version: 'Latest' },
+      { name: 'Pages', version: 'Latest' },
+      { name: 'Cana', version: 'Latest' },
+      { name: 'ChatGPT', version: 'Latest' },
+      { name: 'DBeaer', version: 'Latest' },
+      { name: 'Docker', version: 'Latest' },
+      { name: 'Docker', version: 'Latest' },
+      { name: 'Eclipse', version: 'Latest' },
+      { name: 'Fathom', version: 'Latest' },
+      { name: 'Figma (ia script)', version: 'Latest' },
+      { name: 'tiClient Uninstall', version: 'Latest' },
+      { name: 'tiClient', version: 'Latest' },
+      { name: 'GitHub Atom', version: 'Latest' },
+      { name: 'GitHub Desktop', version: 'Latest' },
+      { name: 'GitHub Desktop', version: 'Latest' },
+      { name: 'Google Chrome', version: 'Latest' },
+      { name: 'Google Chrome', version: 'Latest' },
+      { name: 'Google Drie Desktop', version: 'Latest' },
+      { name: 'GoTo', version: 'Latest' },
+      { name: 'GoToMeeting', version: 'Latest' },
+      { name: 'Home Brew Uninstaller', version: 'Latest' },
+      { name: 'Home Brew', version: 'Latest' },
+      { name: 'iTerm', version: 'Latest' },
+      { name: 'Jamf Composer', version: 'Latest' },
+      { name: 'JetBrains Toolbox', version: 'Latest' },
+      { name: 'Lightshot Screenshot', version: 'Latest' },
+      { name: 'Loom', version: 'Latest' },
+      { name: 'Loom', version: 'Latest' },
+      { name: 'Microsoft Office Pack', version: 'Latest' },
+      { name: 'Microsoft Edge', version: 'Latest' },
+      { name: 'Microsoft Excel', version: 'Latest' },
+      { name: 'Microsoft OneNote', version: 'Latest' },
+      { name: 'Microsoft Outlook', version: 'Latest' },
+      { name: 'Microsoft PowerPoint', version: 'Latest' },
+      { name: 'Microsoft Remote Desktop', version: 'Latest' },
+      { name: 'Microsoft Teams Classic', version: 'Latest' },
+      { name: 'Microsoft S Code', version: 'Latest' },
+      { name: 'Microsoft Word', version: 'Latest' },
+      { name: 'MongoDB Compass', version: 'Latest' },
+      { name: 'Mongolyser', version: 'Latest' },
+      { name: 'Mozilla Firefox', version: 'Latest' },
+      { name: 'Node JS', version: 'Latest' },
+      { name: 'Nodejs', version: 'Latest' },
+      { name: 'Nodejs', version: 'Latest' },
+      { name: 'Notion', version: 'Latest' },
+      { name: 'Oracle MySQL Workbench CE', version: 'Latest' },
+      { name: 'Oracle MySQL Workbench CE', version: 'Latest' },
+      { name: 'PDF Reader Pro Lite', version: 'Latest' },
+      { name: 'PDF Reader Pro', version: 'Latest' },
+      { name: 'Postman Canary', version: 'Latest' },
+      { name: 'Postman Canary', version: 'Latest' },
+      { name: 'Postman', version: 'Latest' },
+      { name: 'Postman', version: 'Latest' },
+      { name: 'RubyMine', version: 'Latest' },
+      { name: 'Slack', version: 'Latest' },
+      { name: 'Slack', version: 'Latest' },
+      { name: 'Sublime Text', version: 'Latest' },
+      { name: 'Tableau Desktop', version: 'Latest' },
+      { name: 'Tableau Prep Builder', version: 'Latest' },
+      { name: 'Todoist', version: 'Latest' },
+      { name: 'Tunnelblick', version: 'Latest' },
+      { name: 'UniFi', version: 'Latest' },
+      { name: 'idyard', version: 'Latest' },
+      { name: 'ZAP Proxy Tool', version: 'Latest' },
+      { name: 'Zoom Workspace', version: 'Latest' },
+      { name: 'Zoom Workspace', version: 'Latest' },
+      { name: 'TablePlus', version: 'Latest' }
     ];
-
-    // Function to populate the table with software data
+    
+    // Function to populate the table with data from softwareList
     function populateTable() {
       const tableBody = document.querySelector('#softwareTable tbody');
-
-      softwareList.forEach((software) => {
+      softwareList.forEach(software => {
         const row = document.createElement('tr');
-
         const nameCell = document.createElement('td');
         nameCell.textContent = software.name;
         row.appendChild(nameCell);
-
         const versionCell = document.createElement('td');
         versionCell.textContent = software.version;
         row.appendChild(versionCell);
-
         tableBody.appendChild(row);
       });
     }
-
+    
     // Populate the table once the DOM is fully loaded
     document.addEventListener('DOMContentLoaded', populateTable);
   </script>
 </body>
 </html>
+
+
+
+/ajithselvam.site/
+/mac-apps-version-control/
+/2nd release of version control/
+/need to test and add more apps that needed/
